@@ -1,0 +1,16 @@
+.wrapper {
+	display: grid;
+	grid-template-columns: 75px 1fr;
+	gap: 25px;
+	align-items: center;
+}
+
+.image {
+	border-radius: 100%;
+	width: 100%;
+	height: auto;
+}
+
+.username {
+	color: #fff;
+}
