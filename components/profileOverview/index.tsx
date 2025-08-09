@@ -1,17 +1,22 @@
 import Image from 'next/image';
+import { useSuspenseQuery } from "@apollo/client";
+import getUserQuery from "@/queries/user/getUser";
+import { User } from "@/app/api/graphql/resolvers/user/types";
 import styles from "./profileOverview.module.css";
 
 export default function ProfileOverview() {
+    const { data }: { data: { user: User } } = useSuspenseQuery(getUserQuery);
+
     return (
         <section className={styles.wrapper}>
             <Image
-                src="https://avatars.steamstatic.com/78f380d0026bd5f52b2082f50197b8a5e1420c35_full.jpg"
-                alt="defiantMonkey profile image"
+                src={data.user.avatarfull}
+                alt={`${data.user.personaname}'s profile image`}
                 width={75}
                 height={75}
                 className={styles.image}
             />
-            <h3 className={styles.username}>defiantMonkey</h3>
+            <h3 className={styles.username}>{data.user.personaname}</h3>
         </section>
     )
 }

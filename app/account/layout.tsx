@@ -1,3 +1,6 @@
+
+'use client';
+
 import Header from "@/components/header";
 import styles from "./layout.module.css";
 
