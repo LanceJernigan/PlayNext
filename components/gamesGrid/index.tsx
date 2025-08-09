@@ -5,7 +5,10 @@ import styles from './gamesGrid.module.css';
 export default function GamesGrid({ games, title, className }: { games: Game[]; title?: string, className?: string; }) {
     return (
         <section className={`${styles.wrapper}${!!className && ` ${className}`}`}>
-            {!!title && <h1 className={styles.title}>{title}</h1>}
+            {!!title && <header className={styles.header}>
+                <h1 className={styles.title}>{title}</h1>
+                <h3 className={styles.count}>{games.length}</h3>
+            </header>}
             <ul className={styles.grid}>
                 {games.map((game) => (
                     <li key={game.appid} className={styles.game}>
