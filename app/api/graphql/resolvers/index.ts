@@ -1,8 +1,10 @@
 import userResolver from "./user";
+import libraryResolver from "./library";
 
 const resolvers = {
     Query: {
-        user: userResolver
+        user: userResolver,
+        library: libraryResolver,
     }
 }
 

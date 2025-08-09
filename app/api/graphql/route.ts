@@ -23,8 +23,24 @@ const typeDefs = gql`
         personastateflags: Int
     }
 
+    type Game {
+        appid: Int
+        name: String
+        playtime_forever: Int
+        img_icon_url: String
+        has_community_visible_stats: Boolean
+        playtime_windows_forever: Int
+        playtime_mac_forever: Int
+        playtime_linux_forever: Int
+        playtime_deck_forever: Int
+        rtime_last_played: Int
+        has_leaderboards: Boolean
+        playtime_disconnected: Int
+    }
+
     type Query {
         user: User
+        library: [Game]
     }
 `;
 
