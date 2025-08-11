@@ -38,9 +38,22 @@ const typeDefs = gql`
         playtime_disconnected: Int
     }
 
+    type Suggestion {
+        name: String
+        appid: Int
+        image: String
+        description: String
+    }
+
+    type Category {
+        name: String
+        games: [Suggestion]
+    }
+
     type Query {
         user: User
         library: [Game]
+        suggestions: [Category]
     }
 `;
 

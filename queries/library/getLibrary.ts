@@ -1,7 +1,7 @@
 import { gql } from "@apollo/client";
 
 export default gql`
-    query User {
+    query Ligrary {
         library {
             appid
             has_community_visible_stats
