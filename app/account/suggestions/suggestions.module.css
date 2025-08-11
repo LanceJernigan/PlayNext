@@ -1,0 +1,16 @@
+.wrapper {
+	padding-top: 100px;
+}
+
+.categories {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	display: grid;
+	gap: 40px;
+}
+
+.category {
+	display: grid;
+	gap: 40px;
+}

@@ -1,8 +1,8 @@
 import GameCard from '@/components/gameCard';
 import { Game } from '@/components/gameCard/types';
-import styles from './gamesGrid.module.css';
+import styles from './gamesRow.module.css';
 
-export default function GamesGrid({ games, title, className }: { games: Game[]; title?: string, className?: string; }) {
+export default function GamesRow({ games, title, className }: { games: Game[]; title?: string, className?: string; }) {
     return (
         <section className={`${styles.wrapper}${!!className ? ` ${className}` : ''}`}>
             {!!title && <header className={styles.header}>

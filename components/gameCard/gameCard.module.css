@@ -28,3 +28,10 @@
 	font-weight: bolder;
 	color: #fff;
 }
+
+.description {
+	margin: 0;
+	font-size: 16px;
+	font-weight: normal;
+	color: #fff;
+}

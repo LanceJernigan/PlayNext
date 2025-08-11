@@ -4,7 +4,8 @@ import { Game } from './types';
 
 export default function GameCard({
     appid,
-    name
+    name,
+    description
 }: Game) {
     return (
         <article className={styles.card}>
@@ -13,6 +14,7 @@ export default function GameCard({
             </div>
             <div className={styles.content}>
                 <h2 className={styles.title}>{name}</h2>
+                {!!description && <p className={styles.description}>{description}</p>}
             </div>
         </article>
     )

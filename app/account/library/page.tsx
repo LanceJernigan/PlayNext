@@ -14,8 +14,8 @@ export default function Library() {
     }, [data.library]);
 
     return (
-        <div className={styles.wrapper}>
+        <section className={styles.wrapper}>
             <GamesGrid title="Library" games={games} className={styles.grid} />
-        </div>
+        </section>
     )
 }
