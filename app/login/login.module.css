@@ -1,0 +1,17 @@
+.wrapper {
+	max-width: 500px;
+	margin: auto;
+	padding: 30px;
+	height: 100vh;
+	box-sizing: border-box;
+	display: grid;
+	align-items: center;
+}
+
+.card {
+	@media (min-width: 600px) {
+		background: rgba(0, 0, 0, 0.2);
+		padding: 100px 50px 50px;
+		border-radius: 20px;
+	}
+}
