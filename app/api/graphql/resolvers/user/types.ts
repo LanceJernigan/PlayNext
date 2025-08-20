@@ -15,3 +15,7 @@ export type User = {
     timecreated: number;
     personastateflags: number;
 }
+
+export type QueryUserArgs = {
+    steamId: string;
+}

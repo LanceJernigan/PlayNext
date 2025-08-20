@@ -1,8 +1,8 @@
 import { gql } from "@apollo/client";
 
 export default gql`
-  query User {
-    user {
+  query User($steamId: String!) {
+    user(steamId: $steamId) {
       avatar
       avatarfull
       avatarhash

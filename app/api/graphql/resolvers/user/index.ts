@@ -1,4 +1,6 @@
-const userResolver = () => {
+import { QueryUserArgs, User } from './types';
+
+const userResolver = (_parent: unknown, args: QueryUserArgs): User | null => {
     return {
         "steamid": "76561199193372236",
         "communityvisibilitystate": 3,

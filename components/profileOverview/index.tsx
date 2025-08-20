@@ -5,7 +5,11 @@ import { User } from "@/app/api/graphql/resolvers/user/types";
 import styles from "./profileOverview.module.css";
 
 export default function ProfileOverview() {
-    const { data }: { data: { user: User } } = useSuspenseQuery(getUserQuery);
+    const { data }: { data: { user: User } } = useSuspenseQuery(getUserQuery, {
+        variables: {
+            steamId: "76561199193372236"
+        }
+    });
 
     return (
         <section className={styles.wrapper}>

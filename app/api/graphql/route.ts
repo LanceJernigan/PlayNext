@@ -51,7 +51,7 @@ const typeDefs = gql`
     }
 
     type Query {
-        user: User
+        user(steamId: String!): User
         library: [Game]
         suggestions: [Category]
     }
