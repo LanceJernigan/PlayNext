@@ -6,7 +6,7 @@
 	gap: 30px;
 	padding: 100px 50px 50px;
 
-	&[data-hideContent="true"] {
+	&[data-hidecontent="true"] {
 		grid-template-rows: min-content 0fr min-content;
 		gap: 15px;
 	}
@@ -43,7 +43,7 @@
 	transition: all 0.5s;
 }
 
-.wrapper[data-hideContent="true"] .content {
+.wrapper[data-hidecontent="true"] .content {
 	opacity: 0;
 	margin: 0;
 }

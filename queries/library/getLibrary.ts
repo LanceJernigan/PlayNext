@@ -1,8 +1,8 @@
 import { gql } from "@apollo/client";
 
 export default gql`
-    query Ligrary {
-        library {
+    query Ligrary($steamId: String!) {
+        library(steamId: $steamId) {
             appid
             has_community_visible_stats
             has_leaderboards

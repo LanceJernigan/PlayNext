@@ -52,7 +52,7 @@ const typeDefs = gql`
 
     type Query {
         user(steamId: String!): User
-        library: [Game]
+        library(steamId: String!): [Game]
         suggestions: [Category]
     }
 `;

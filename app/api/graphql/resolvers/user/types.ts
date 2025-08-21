@@ -19,3 +19,9 @@ export type User = {
 export type QueryUserArgs = {
     steamId: string;
 }
+
+export type GetPlayerSummariesResponse = {
+    response: {
+        players: User[];
+    }
+}
