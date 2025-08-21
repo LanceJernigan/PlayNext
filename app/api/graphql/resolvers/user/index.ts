@@ -1,6 +1,8 @@
 import { QueryUserArgs, User } from './types';
 
-const userResolver = (_parent: unknown, args: QueryUserArgs): User | null => {
+const userResolver = async (_parent: unknown, args: QueryUserArgs): User | null => {
+    await new Promise(resolve => setTimeout(resolve, 5000))
+
     return {
         "steamid": "76561199193372236",
         "communityvisibilitystate": 3,

@@ -27,8 +27,6 @@ export default function Login() {
         }
     }
 
-    console.log(data, loading, error);
-
     return (
         <div className={styles.wrapper}>
             <div className={styles.card}>

@@ -25,7 +25,7 @@ export default function Login({ handleSubmit, handleChange, steamId, user, loadi
     }
 
     return (
-        <section className={styles.wrapper}>
+        <section className={styles.wrapper} data-hideContent={!!user || loading}>
             <header className={styles.header}>
                 <div className={styles.image}>
                     {user && (
