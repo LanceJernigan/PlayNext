@@ -11,7 +11,12 @@ export default function GameCard({
     return (
         <article className={styles.card}>
             <div className={styles.imageWrapper}>
-                <Image src={`https://cdn.akamai.steamstatic.com/steam/apps/${appid}/header.jpg`} alt={`${name} thumbnail`} objectFit="cover" fill />
+                <Image
+                    src={`https://cdn.akamai.steamstatic.com/steam/apps/${appid}/header.jpg`}
+                    alt={`${name} thumbnail`}
+                    sizes="300px"
+                    fill
+                />
             </div>
             <div className={styles.content}>
                 <h2 className={styles.title}>{name}</h2>

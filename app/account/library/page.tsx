@@ -2,7 +2,6 @@
 
 import { useQuery } from "@apollo/client";
 import getLibraryQuery from "@/queries/library/getLibrary";
-import { Game } from "@/app/api/graphql/resolvers/library/types";
 import GamesGrid from "@/components/gamesGrid";
 import styles from "./page.module.css";
 import { useMemo } from "react";
