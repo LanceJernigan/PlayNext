@@ -1,6 +1,7 @@
 import { Inter } from "next/font/google";
-import ApolloWrapper from "@/components/apolloWrapper";
+import ApolloWrapper from "@/providers/apolloWrapper";
 import styles from "./layout.module.css";
+import { AppProvider } from "@/providers/appContext";
 
 const inter = Inter();
 
@@ -13,7 +14,9 @@ export default function RootLayout({
     <html lang="en" className={inter.className}>
       <body className={styles.body}>
         <ApolloWrapper>
-          {children}
+          <AppProvider>
+            {children}
+          </AppProvider>
         </ApolloWrapper>
       </body>
     </html>

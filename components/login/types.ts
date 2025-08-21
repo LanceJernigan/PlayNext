@@ -4,6 +4,6 @@ export type LoginArgs = {
     handleSubmit: (steamId: string) => void,
     handleChange: (steamId: string) => void,
     steamId: string,
-    user?: User,
+    user: User | null,
     loading: boolean;
 }
