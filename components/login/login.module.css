@@ -137,9 +137,9 @@
 
 @keyframes gradient-animation {
 	0% {
-		background-position: 0% 0%; /* Start the animation from here */
+		background-position: 0% 0%;
 	}
 	100% {
-		background-position: 400% 400%; /* Animate to here, making the background move continuously */
+		background-position: 400% 400%;
 	}
 }

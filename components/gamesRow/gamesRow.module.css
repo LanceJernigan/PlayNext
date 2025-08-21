@@ -14,6 +14,7 @@
 	font-size: 42px;
 	font-weight: bold;
 	margin: 0;
+	animation: header-in 1s cubic-bezier(0.2, 0.7, 0.2, 1) forwards;
 }
 
 .count {
@@ -23,11 +24,109 @@
 	margin: 0;
 }
 
+.gridWrapper {
+	position: relative;
+	width: 100%;
+	min-width: 0;
+	max-width: 100%;
+	overflow: visible;
+}
+
+.gridWrapper:hover .button:not(.buttonHidden) {
+	opacity: 1;
+}
+
+.button {
+	background: rgba(0, 0, 0, 0.5);
+	backdrop-filter: blur(10px);
+	border: none;
+	outline: none;
+	position: absolute;
+	top: 0;
+	height: 100%;
+	padding: 15px;
+	z-index: 1;
+	transition: all 0.2s ease-in-out;
+	color: #fff;
+	opacity: 0;
+	cursor: pointer;
+}
+
+.buttonLeft {
+	left: 0;
+}
+
+.buttonRight {
+	right: -50px;
+}
+
+.buttonHidden {
+	opacity: 0;
+}
+
 .grid {
 	display: grid;
-	grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+	grid-auto-flow: column;
+	grid-auto-columns: minmax(300px, 1fr);
 	gap: 30px 25px;
 	list-style: none;
-	margin: 0;
-	padding: 0;
+	margin: 0 -25px 0 -25px;
+	padding: 0 25px 0 25px;
+	overflow-x: auto;
+	overflow-y: hidden;
+	-webkit-overflow-scrolling: touch;
+	scrollbar-width: none;
+	-ms-overflow-style: none;
+	scroll-snap-type: x proximity;
+	min-width: 0;
+
+	@media (min-width: 600px) {
+		margin: 0 -50px 0 0;
+		padding: 0 50px 0 0;
+	}
+
+	&::-webkit-scrollbar {
+		display: none;
+	}
+}
+
+.game {
+	opacity: 0;
+	transform: translateY(12px) scale(0.98);
+	will-change: opacity, transform;
+	animation: game-in 1s cubic-bezier(0.2, 0.7, 0.2, 1) forwards;
+	scroll-snap-align: start; /* <- align column start with scroller start */
+}
+
+@keyframes game-in {
+	0% {
+		opacity: 0;
+		transform: translateY(12px) scale(0.98);
+		filter: blur(2px);
+	}
+	60% {
+		opacity: 1;
+		transform: translateY(0) scale(1);
+		filter: blur(0);
+	}
+	100% {
+		opacity: 1;
+		transform: translateY(0) scale(1);
+		filter: blur(0);
+	}
+}
+
+@keyframes header-in {
+	0% {
+		opacity: 0;
+		transform: translateX(-12px);
+	}
+	60% {
+		opacity: 1;
+		transform: translateX(0);
+	}
+	100% {
+		opacity: 1;
+		transform: translateX(0);
+	}
 }

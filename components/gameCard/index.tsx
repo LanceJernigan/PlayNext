@@ -1,12 +1,13 @@
 import Image from "next/image";
+import { Game } from "@/app/api/graphql/resolvers/library/types";
 import styles from './gameCard.module.css';
-import { Game } from './types';
+import { GameCardArgs } from './types';
 
 export default function GameCard({
     appid,
     name,
-    description
-}: Game) {
+    description,
+}: Game & GameCardArgs) {
     return (
         <article className={styles.card}>
             <div className={styles.imageWrapper}>

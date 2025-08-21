@@ -14,6 +14,7 @@
 	font-size: 42px;
 	font-weight: bold;
 	margin: 0;
+	animation: header-in 1s cubic-bezier(0.2, 0.7, 0.2, 1) forwards;
 }
 
 .count {
@@ -30,4 +31,44 @@
 	list-style: none;
 	margin: 0;
 	padding: 0;
+}
+
+.game {
+	opacity: 0;
+	transform: translateY(12px) scale(0.98);
+	will-change: opacity, transform;
+	animation: game-in 1s cubic-bezier(0.2, 0.7, 0.2, 1) forwards;
+}
+
+@keyframes game-in {
+	0% {
+		opacity: 0;
+		transform: translateY(12px) scale(0.98);
+		filter: blur(2px);
+	}
+	60% {
+		opacity: 1;
+		transform: translateY(0) scale(1);
+		filter: blur(0);
+	}
+	100% {
+		opacity: 1;
+		transform: translateY(0) scale(1);
+		filter: blur(0);
+	}
+}
+
+@keyframes header-in {
+	0% {
+		opacity: 0;
+		transform: translateX(-12px);
+	}
+	60% {
+		opacity: 1;
+		transform: translateX(0);
+	}
+	100% {
+		opacity: 1;
+		transform: translateX(0);
+	}
 }
