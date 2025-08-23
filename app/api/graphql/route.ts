@@ -1,7 +1,7 @@
 import { startServerAndCreateNextHandler } from "@as-integrations/next";
 import { ApolloServer } from "@apollo/server";
-import { NextRequest } from "next/server";
 import { gql } from "graphql-tag";
+import type { NextRequest } from "next/server";
 import resolvers from './resolvers';
 
 const typeDefs = gql`
@@ -57,13 +57,20 @@ const typeDefs = gql`
     }
 `;
 
-const server = new ApolloServer({
-    typeDefs,
-    resolvers,
-});
+
+const server = new ApolloServer({ typeDefs, resolvers });
 
 const handler = startServerAndCreateNextHandler<NextRequest>(server, {
-    context: async req => ({ req }),
+    // Context receives only `req` (per the lib’s API)
+    context: async (req) => ({ req }),
 });
 
-export { handler as GET, handler as POST };
+// Export GET/POST wrappers that accept the Next.js 2nd arg.
+// On Next 15, `params` is often a Promise — type it accordingly.
+export async function GET(req: NextRequest, _ctx: { params: Promise<Record<string, string>> }) {
+    return handler(req);
+}
+
+export async function POST(req: NextRequest, _ctx: { params: Promise<Record<string, string>> }) {
+    return handler(req);
+}

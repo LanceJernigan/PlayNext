@@ -3,7 +3,9 @@ import ApolloWrapper from "@/providers/apolloWrapper";
 import styles from "./layout.module.css";
 import { AppProvider } from "@/providers/appContext";
 
-const inter = Inter();
+const inter = Inter({
+  subsets: ["latin"]
+});
 
 export default function RootLayout({
   children,
