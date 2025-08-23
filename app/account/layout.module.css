@@ -17,9 +17,11 @@
 	background: rgba(26, 26, 26, 0.8);
 	backdrop-filter: blur(5px);
 	border-radius: 20px;
-	padding: 25px;
-	position: sticky;
+	padding: 15px 25px;
+	position: fixed;
 	top: 25px;
+	left: 25px;
+	width: calc(100vw - 115px);
 	z-index: 999;
 	box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
 	animation: animate-header-in 0.5s ease-in-out 1;
@@ -27,6 +29,18 @@
 	@media (min-width: 1100px) {
 		height: calc(100vh - 100px);
 		background: rgba(0, 0, 0, 0.2);
+		padding: 25px;
+		position: sticky;
+		top: 25px;
+		width: auto;
+	}
+}
+
+.main {
+	padding-top: 50px;
+
+	@media (min-width: 1100px) {
+		padding: 0;
 	}
 }
 

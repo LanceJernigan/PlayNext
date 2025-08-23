@@ -13,4 +13,9 @@
 
 .username {
 	color: #fff;
+	display: none;
+
+	@media (min-width: 600px) {
+		display: block;
+	}
 }

@@ -1,4 +1,49 @@
 .header {
 	display: grid;
-	gap: 50px;
+	grid-template-rows: min-content 0;
+	gap: 0;
+	overflow: hidden;
+	transition: all 0.2s ease-in-out;
+
+	&[data-menuopen="true"] {
+		grid-template-rows: min-content 1fr;
+		gap: 50px;
+		padding-bottom: 25px;
+	}
+
+	@media (min-width: 1100px) {
+		grid-template-rows: min-content 1fr;
+		gap: 50px;
+	}
+}
+
+.top {
+	display: grid;
+	grid-template-columns: 1fr min-content;
+}
+
+.menuButton {
+	background: transparent;
+	border: none;
+	outline: none;
+	cursor: pointer;
+	padding: 10px;
+	margin-right: -10px;
+
+	@media (min-width: 1100px) {
+		display: none;
+	}
+}
+
+.menuWrapper {
+	opacity: 0;
+	transition: opacity 0.1s ease-in-out;
+
+	@media (min-width: 1100px) {
+		opacity: 1;
+	}
+}
+
+.header[data-menuopen="true"] .menuWrapper {
+	opacity: 1;
 }
